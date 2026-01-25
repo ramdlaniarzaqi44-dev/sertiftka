@@ -1,34 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Sertifikat TKA</title>
+    <meta charset="UTF-8">
+    <title>Aplikasi Saya</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <style>
-        /* Reset margin agar tidak ada celah putih di pinggir */
+        /* 1. Hilangkan semua margin & scrollbar di halaman induk */
         body, html {
             margin: 0;
             padding: 0;
+            width: 100%;
             height: 100%;
-            width: 100%;
-            overflow: hidden; /* Mencegah scroll ganda */
+            overflow: hidden; /* Mencegah halaman utama bergoyang */
+            background-color: #ffffff; /* Sesuaikan warna background jika perlu */
         }
-        
+
+        /* 2. Teknik 'Fixed Fullscreen' untuk iFrame */
         iframe {
-            display: block;
+            position: fixed; /* Memaku iframe ke layar */
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
             width: 100%;
-            height: 100%; /* Memenuhi tinggi layar HP */
+            height: 100%;
             border: none;
             
-            /* Trik agar scrolling lancar di iPhone/iPad */
+            /* Optimasi tampilan & performa */
+            display: block;
+            z-index: 99; /* Pastikan iframe di layer teratas */
+            
+            /* Agar scrolling smooth di iPhone/iPad */
             -webkit-overflow-scrolling: touch; 
         }
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbx4spgk_yTQaXiHQKrC8HkjsnO9y7DrkRl5Dwk4TUnPi1nkkBq--qFIYhqArPtJGQlO3Q/exec">
-        Browser Anda tidak mendukung iFrame.
+
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbx4spgk_yTQaXiHQKrC8HkjsnO9y7DrkRl5Dwk4TUnPi1nkkBq--qFIYhqArPtJGQlO3Q/exec" 
+        allow="geolocation; microphone; camera" 
+        sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation">
+        <p>Browser Anda tidak mendukung iFrame.</p>
     </iframe>
+
 </body>
 </html>
