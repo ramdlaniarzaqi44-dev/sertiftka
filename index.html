@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Aplikasi Saya</title>
+    <title>Sertifikat TKA</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
     <style>
-        /* CSS agar iframe memenuhi layar penuh */
+        /* Reset margin agar tidak ada celah putih di pinggir */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            width: 100%;
+            overflow: hidden; /* Mencegah scroll ganda */
         }
+        
         iframe {
             display: block;
             width: 100%;
-            height: 100vh; /* 100% dari tinggi layar */
+            height: 100%; /* Memenuhi tinggi layar HP */
             border: none;
+            
+            /* Trik agar scrolling lancar di iPhone/iPad */
+            -webkit-overflow-scrolling: touch; 
         }
     </style>
 </head>
@@ -23,5 +31,4 @@
         Browser Anda tidak mendukung iFrame.
     </iframe>
 </body>
-
 </html>
